@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+  <class name="Graviton\PersonBundle\Document\Customer">
+    <property name="id" type="string" accessor-getter="getId"/>
+    <property name="firstName" accessor-getter="getFirstname" accessor-setter="setFirstname">
+      <type><![CDATA[string]]></type>
+    </property>
+    <property name="lastName" accessor-getter="getLastname" accessor-setter="setLastname">
+      <type><![CDATA[string]]></type>
+    </property>
+    <property name="consultant" accessor-setter="setConsultant" accessor-getter="getConsultant">
+       <type><![CDATA[Graviton\PersonBundle\Document\PersonConsultant]]></type>
+    </property>
+  </class>
+</serializer>

@@ -1,0 +1,11 @@
+{
+  "description": "@todo replace me",
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "@todo replace me"
+    }
+  },
+  "required": [
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "@todo replace me",
+  "properties": {
+    "firstName": {
+      "title": "firstName",
+      "description": "@todo replace me"
+    },
+    "lastName": {
+      "title": "lastName",
+      "description": "@todo replace me"
+    },
+    "consultant": {
+      "title": "Consultant",
+      "description": "@todo replace me"
+    },
+    "id": {
+      "title": "ID",
+      "description": "@todo replace me"
+    }
+  },
+  "required": [
+  ]
+}
