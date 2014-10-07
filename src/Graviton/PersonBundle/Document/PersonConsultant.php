@@ -2,8 +2,6 @@
 
 namespace Graviton\PersonBundle\Document;
 
-use \Doctrine\Common\Collections\ArrayCollection;
-
 /**
  * Graviton\PersonBundle\Document\PersonConsultant
  *
@@ -48,16 +46,17 @@ class PersonConsultant
      */
     protected $profile;
 
-
     /**
      * Set uri
      *
-     * @param string $uri
+     * @param string $uri uri
+     *
      * @return self
      */
     public function setUri($uri)
     {
         $this->uri = $uri;
+
         return $this;
     }
 
@@ -74,12 +73,14 @@ class PersonConsultant
     /**
      * Set profile
      *
-     * @param string $profile
+     * @param string $profile profile
+     *
      * @return self
      */
     public function setProfile($profile)
     {
         $this->profile = $profile;
+
         return $this;
     }
 

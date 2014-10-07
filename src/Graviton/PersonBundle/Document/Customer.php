@@ -2,8 +2,6 @@
 
 namespace Graviton\PersonBundle\Document;
 
-use \Doctrine\Common\Collections\ArrayCollection;
-
 /**
  * Graviton\PersonBundle\Document\Customer
  *
@@ -101,16 +99,17 @@ class Customer
      */
     protected $consultant;
 
-
     /**
      * Set consultant
      *
-     * @param Graviton\PersonBundle\Document\PersonConsultant $consultant
+     * @param Graviton\PersonBundle\Document\PersonConsultant $consultant consultant
+     *
      * @return self
      */
     public function setConsultant(\Graviton\PersonBundle\Document\PersonConsultant $consultant)
     {
         $this->consultant = $consultant;
+
         return $this;
     }
 

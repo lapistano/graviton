@@ -162,36 +162,42 @@ class Consultant
     /**
      * Set firstName
      *
-     * @param string $firstName
+     * @param string $firstName first name
+     *
      * @return self
      */
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
+
         return $this;
     }
 
     /**
      * Set lastName
      *
-     * @param string $lastName
+     * @param string $lastName last name
+     *
      * @return self
      */
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
         return $this;
     }
 
     /**
      * Set title
      *
-     * @param string $title
+     * @param string $title title
+     *
      * @return self
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 }

@@ -56,7 +56,10 @@ class LoadCustomerData implements FixtureInterface, ContainerAwareInterface
             // use round(150/x)+1 to get a distribution that is somewhat top heavy
             $skipNum = $i;
             if ($i !== 0) {
-                $skipNum = round($maxCustomers/$i)+1;
+                $skipNum = round($maxCustomers/3*2/$i)+1;
+            }
+            if ($skipNum > 14) {
+                $skipNum = 14;
             }
             $consultant = $consultants->createQueryBuilder()->skip($skipNum)->getQuery()->getSingleResult();
             $consultantId = $consultant->getId();
