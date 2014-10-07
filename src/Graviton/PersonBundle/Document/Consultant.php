@@ -61,6 +61,20 @@ class Consultant
     }
 
     /**
+     * Set id
+     *
+     * @param string $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Get firstName
      *
      * @return string $firstName
@@ -116,6 +130,23 @@ class Consultant
     public function getContacts()
     {
         return $this->contacts;
+    }
+
+    /**
+     * Set contacts
+     *
+     * @param ArrayCollection|array $contacts contacts
+     *
+     * @return self
+     */
+    public function setContacts($contacts)
+    {
+        if (is_array($contacts)) {
+            $contacts = new ArrayCollection($contacts);
+        }
+        $this->contacts = $contacts;
+
+        return $this;
     }
 
     /**

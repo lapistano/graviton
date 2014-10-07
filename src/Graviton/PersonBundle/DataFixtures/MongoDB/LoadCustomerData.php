@@ -48,17 +48,25 @@ class LoadCustomerData implements FixtureInterface, ContainerAwareInterface
         $serializer = $this->container->get('serializer');
         $faker = $this->container->get('test.faker');
         $router = $this->container->get('router');
+        // this is rather fragile since it depends on consultants being loaded already, atm this is by alphabet
+        $consultants = $this->container->get('graviton.person.repository.consultant');
+        $maxCustomers = 150;
 
-        for ($i = 0; $i < 15; $i++) {
-            // seed like the first third of consultants
-            $faker->seed($i);
+        for ($i = 0; $i < $maxCustomers; $i++) {
+            // use round(150/x)+1 to get a distribution that is somewhat top heavy
+            $skipNum = $i;
+            if ($i !== 0) {
+                $skipNum = round($maxCustomers/$i)+1;
+            }
+            $consultant = $consultants->createQueryBuilder()->skip($skipNum)->getQuery()->getSingleResult();
+            $consultantId = $consultant->getId();
             $consultant = array(
-                '$ref' => $router->generate('graviton.person.rest.consultant.get', array('id' => strtoupper($faker->bothify('????###??'))), true),
+                'id' => $consultantId,
+                '$ref' => $router->generate('graviton.person.rest.consultant.get', array('id' => $consultantId), true),
                 'profile' => $router->generate('graviton.person.rest.consultant.canonicalIdSchema', array(), true)
             );
 
-            // and seed again with large offset to make sure we don't get the same seeds as consultants
-            $faker->seed($i * 100);
+            $faker->seed($i);
             $customer = array(
                 'id' => strtoupper($faker->bothify('????###??')),
                 'firstName' => $faker->firstName,
