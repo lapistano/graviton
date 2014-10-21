@@ -114,4 +114,31 @@ class App implements TranslatableDocumentInterface
     {
         return $this->showInMenu;
     }
+    /**
+     * @var date $createDate
+     */
+    protected $createDate;
+
+
+    /**
+     * Set createDate
+     *
+     * @param date $createDate
+     * @return self
+     */
+    public function setCreateDate($createDate)
+    {
+        $this->createDate = $createDate;
+        return $this;
+    }
+
+    /**
+     * Get createDate
+     *
+     * @return date $createDate
+     */
+    public function getCreateDate()
+    {
+        return $this->createDate;
+    }
 }
